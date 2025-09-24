@@ -1,37 +1,21 @@
 import React from 'react'
-import { useState } from 'react'
+
 export default function About(props) {
-const [darkMode, setDarkMode] = useState({
-    color: 'black',
-    backgroundColor: 'white',
-    
-});
-const [btnText, setBtnText] = useState("Enable Dark Mode")
-const toggleStyle = ()=>{
-    if(darkMode.color === 'black'){
-        setDarkMode({
-            color: 'white',
-            backgroundColor: 'black',
-            border: '1px solid white'
-        });
-        setBtnText("Disable Dark Mode");
-    }
-    else{
-        setDarkMode({
-            color: 'black',
-            backgroundColor: 'white',
-            border: '1px solid black'
-        });
-        setBtnText("Enable Dark Mode");
-    }
+let myStyle = {
+color: props.mode==='dark'?'white':'#042743',
+backgroundColor: props.mode==='dark'?'#042743':'white',
+border: '1px solid ',
+borderColor: props.mode==='dark'?'white':'#042743',
+boxShadow: 'none'
 }
   return (
     < >
-   < div className="container-fluid  my-3 "  style={darkMode}>
+   < div className="container-fluid  my-3 "  style={myStyle}>
+   <h1>About Us</h1>
       <div className="accordion " id="accordionExample">
-  <div className="accordion-item " style={darkMode}>
+  <div className="accordion-item " style={myStyle}>
     <h2 className="accordion-header" id="headingOne">
-      <button className="accordion-button" style={darkMode} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <button className="accordion-button"  style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
         Accordion Item #1
       </button>
     </h2>
@@ -41,9 +25,9 @@ const toggleStyle = ()=>{
       </div>
     </div>
   </div>
-  <div className="accordion-item " style={darkMode}>
+  <div className="accordion-item " style={myStyle}>
     <h2 className="accordion-header" id="headingTwo">
-      <button className="accordion-button collapsed" style={darkMode} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
         Accordion Item #2
       </button>
     </h2>
@@ -53,9 +37,9 @@ const toggleStyle = ()=>{
       </div>
     </div>
   </div>
-  <div className="accordion-item " style={darkMode}>
+  <div className="accordion-item " style={myStyle}>
     <h2 className="accordion-header" id="headingThree">
-      <button className="accordion-button collapsed" style={darkMode} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
         Accordion Item #3
       </button>
     </h2>
@@ -66,9 +50,7 @@ const toggleStyle = ()=>{
     </div>
   </div>
 </div>
-<div className="container my-3">
-  <button type="button" onClick={toggleStyle} className="btn btn-primary">{btnText}</button>
-</div>
+
 </div>
     </>
   )
