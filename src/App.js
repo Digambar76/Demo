@@ -1,14 +1,14 @@
 //import logo from './logo.svg';
 import './App.css';
-//import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, {useState} from 'react'
-//import {
-//  BrowserRouter as Router,
-// Routes,
- // Route
-//} from "react-router-dom";
+import {
+  BrowserRouter as Router,
+ Routes,
+ Route
+} from "react-router-dom";
 
 function App() {
 
@@ -26,17 +26,15 @@ function App() {
   }
   return ( 
   <>
-  {/* <Router> */}
+  {<Router> 
         <Navbar title="Demo1" about="About" toggleMode={toggleMode} mode={mode}/>
         <div className="container">
-         {/* <Routes> */}
-            {/* <Route path="/about" element={<About mode={mode} />} /> */}
-           {/*<Route path="/" element={*/} 
-              <TextForm heading="Enter the text to analyze" mode={mode} />
-              {/* </Route> }
-          {/* </Routes> */}
+         { <Routes> 
+            { <Route path="/about" element={<About mode={mode} />} /> }
+           {<Route path="/" element={<TextForm heading="Enter the text to analyze" mode={mode} />}/>}
+          </Routes> }
         </div>
-      {/* </Router> */}
+       </Router> }
   </>
  );
 }
