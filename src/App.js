@@ -27,7 +27,7 @@ function App() {
   return ( 
   <>
   {<Router> 
-        <Navbar title="Demo" about="About" toggleMode={toggleMode} mode={mode}/>
+        <Navbar title="Textutiles" about="About" toggleMode={toggleMode} mode={mode}/>
         <div className="container">
          { <Routes> 
             { <Route path="/about" element={<About mode={mode} />} /> }
